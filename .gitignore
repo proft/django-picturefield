@@ -1,0 +1,10 @@
+*.pyc
+*.po
+*.wsgi
+*.swp
+.ropeproject
+.venv
+.idea
+*.db
+*.sqlite
+*.log
