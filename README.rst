@@ -8,16 +8,8 @@ django-picturefield
 =========
 
 1. Установка модуля и зависимостей `pip install 'git+https://github.com/proft/django-picturefield.git'`;
-2. Добавляем `picturefield` в INSTALLED_APPS
 
-::
-
-    INSTALLED_APPS = (
-        ...
-        'picturefield',
-    )
-
-3. Пример использования:
+2. Пример использования:
 
 ::
 
