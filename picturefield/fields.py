@@ -4,6 +4,7 @@ from isounidecode import unidecode
 from django.db.models import ImageField
 from django.core.exceptions import ValidationError
 from picturefield.settings import *
+from picturefield.widgets import PictureFileWidget
 
 try:
     from PIL import Image
@@ -20,6 +21,10 @@ class PictureField(ImageField):
         self.max_size['width'] = max_size[0]
         self.max_size['height'] = max_size[1]
         super(PictureField, self).__init__(verbose_name, name, *args, **kwargs)
+
+    def formfield(self, **kwargs):
+        kwargs['widget'] = PictureFileWidget
+        return super(PictureField, self).formfield(**kwargs)
 
     def validate(self, value, model_instance):
         super(PictureField, self).validate(value, model_instance)
