@@ -9,7 +9,7 @@ install_requires = [
 
 setup(
     name='django-picturefield',
-    version=0.2,
+    version=0.3,
     description=u'Расширение ImageField с поддержкой кирилицы в именах файлов и ограничений на размер изображения',
     long_description = open('README.rst').read(),
     keywords='imagefield, django',

@@ -42,6 +42,10 @@ class PictureField(ImageField):
                     u'Размер изображения больше чем %sx%s px.' %
                     (self.max_size['width'], self.max_size['height']))
 
+            # check file size
+            if value.size > MAX_UPLOAD_SIZE:
+                raise ValidationError(u"Максимальный размер файла: %s" % filesize(MAX_UPLOAD_SIZE))
+
             # check format
             try:
                 im = Image.open(value)
